@@ -3,6 +3,8 @@ module.exports = {
     "rules": {
         "indent": [1, 4],
         'no-console': 'off',
-        'class-methods-use-this': 'off'
+        'class-methods-use-this': 'off',
+        'one-var':'off',
+        'one-var-declaration-per-line': 'off'
     }
 };

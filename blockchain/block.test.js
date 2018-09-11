@@ -1,7 +1,8 @@
+/* global describe it beforeEach expect */
 const Block = require('./block');
 
 describe('Block', () => {
-    let data, lastBlock, block
+    let data, lastBlock, block;
     beforeEach(() => {
         data = 'bar';
         lastBlock = Block.genesis();
