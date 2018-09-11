@@ -4,7 +4,6 @@ const P2P_PORT = process.env.P2P_PORT || 5001;
 const peers = process.env.PEERS ? process.env.PEERS.split(',') : [];
 
 class P2pServer {
-
     constructor(blockchain) {
         this.blockchain = blockchain;
         this.sockets = [];
@@ -12,7 +11,7 @@ class P2pServer {
 
     listen() {
         const server = new Websocket.Server({
-            port: P2P_PORT
+            port: P2P_PORT,
         });
         server.on('connection', socket => this.connectSocket(socket));
 
@@ -22,8 +21,8 @@ class P2pServer {
     }
 
     connectToPeers() {
-        peers.forEach(peer => {
-            //ws://localhost:5001
+        peers.forEach((peer) => {
+            // ws://localhost:5001
             const socket = new Websocket(peer);
             socket.on('open', () => this.connectSocket(socket));
         });
@@ -39,7 +38,7 @@ class P2pServer {
     }
 
     messageHandler(socket) {
-        socket.on('message', message => {
+        socket.on('message', (message) => {
             const data = JSON.parse(message);
 
             this.blockchain.replaceChain(data);
