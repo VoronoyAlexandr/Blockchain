@@ -1,6 +1,6 @@
 /* global describe it beforeEach expect */
-const Blockchain = require('./index');
-const Block = require('./block');
+const Blockchain = require('../blockchain');
+const Block = require('../blockchain/block');
 
 describe('Blockchain', () => {
     let bc, bc2;

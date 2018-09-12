@@ -1,5 +1,5 @@
 /* global describe it beforeEach expect */
-const Block = require('./block');
+const Block = require('../blockchain/block');
 
 describe('Block', () => {
     let data, lastBlock, block;

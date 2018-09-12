@@ -1,6 +1,6 @@
 /* global describe it beforeEach expect */
-const Transaction = require('./transaction');
-const Wallet = require('./index');
+const Transaction = require('../wallet/transaction');
+const Wallet = require('../wallet');
 
 describe('Transaction', () => {
     let transaction, wallet, recipient, amount;
