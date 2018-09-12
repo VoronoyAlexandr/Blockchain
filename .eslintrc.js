@@ -5,6 +5,7 @@ module.exports = {
         'no-console': 'off',
         'class-methods-use-this': 'off',
         'one-var':'off',
-        'one-var-declaration-per-line': 'off'
+        'one-var-declaration-per-line': 'off',
+        'default-case': 'off'
     }
 };
