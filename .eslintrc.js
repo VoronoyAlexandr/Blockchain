@@ -6,6 +6,7 @@ module.exports = {
         'class-methods-use-this': 'off',
         'one-var':'off',
         'one-var-declaration-per-line': 'off',
-        'default-case': 'off'
+        'default-case': 'off',
+        'consistent-return': 'off'
     }
 };
