@@ -20,4 +20,27 @@ describe('Transaction', () => {
         expect(transaction.outputs.find(output => output.address === recipient).amount)
             .toEqual(amount);
     });
+
+    it('inputs the balance of wallet', () => {
+        console.log(transaction);
+        expect(transaction.input.amount).toEqual(wallet.balance);
+    });
+
+    it('validates a valid transaction', () => {
+        expect(Transaction.verifyTransaction(transaction)).toBe(true);
+    });
+
+    it('invalidates a corrupt transaction', () => {
+        transaction.outputs[0].amount = 50000;
+        expect(Transaction.verifyTransaction(transaction)).toBe(false);
+    });
+    describe('transacting with an amount that exceeds the balance', () => {
+        beforeEach(() => {
+            amount = 50000;
+            transaction = Transaction.newTransaction(wallet, recipient, amount);
+        });
+        it('does not create the transaction', () => {
+            expect(transaction).toEqual(false);
+        });
+    });
 });
